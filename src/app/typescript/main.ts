@@ -6,16 +6,18 @@ let autoDetectRenderer = PIXI.autoDetectRenderer,
     Sprite = PIXI.Sprite;
 
 let stage = new PIXI.Container(),
-    renderer = autoDetectRenderer(1400, 1400, { backgroundColor: 0x1099bb });
+    renderer = autoDetectRenderer(800, 600);
 parent.document.body.appendChild(renderer.view);
 setInterval(function () { renderer.render(stage); }, 30);
 let clock;
 loader
-    .add("background", "assets/images/sprites/background.png")
+    .add("clockBackground", "assets/images/sprites/background.png")
     .add("hoursArrow", "assets/images/sprites/hoursArrow.png")
     .add("minutesArrow", "assets/images/sprites/minutesArrow.png")
     .add("secondsArrowHead", "assets/images/sprites/secondsArrowHead.png")
     .add("secondsArrowTail", "assets/images/sprites/secondsArrowTail.png")
+    .add("arrow", "assets/images/sprites/arrow.png")
+    .add("canvasBackground", "assets/images/utilities/background.jpg")
     .load(function () {
         clock = new Clock(stage);
     });
